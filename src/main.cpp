@@ -17,8 +17,15 @@ void setup() {
 }
 
 void loop() {
-  // 其他逻辑...
-  delay(1000);
-  //这个我是在vscode中修改的注释
-  //这个是我在GitHub上修改的注释
+  static unsigned long lastToggle = 0;
+  static bool buzzerOn = false;
+  const unsigned long intervalMs = 1000;
+
+  if (millis() - lastToggle >= intervalMs) {
+    lastToggle = millis();
+    buzzerOn = !buzzerOn;
+    ledcWrite(channel, buzzerOn ? 128 : 0);
+  }
+
+  delay(10);
 }
