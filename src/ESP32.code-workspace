@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../../PowerPack/ESP32"
+		},
+		{
+			"name": "buzzTest",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
